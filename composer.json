@@ -1,0 +1,17 @@
+{
+  "name": "webtimal/vite-php",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Webtimal\\Vite\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Webtimal GmbH",
+      "email": "dev@webtimal.ch"
+    }
+  ],
+  "require": {}
+}
