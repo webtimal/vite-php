@@ -35,43 +35,6 @@
 			];
 		}
 
-		public function get2(string ...$keys): array
-		{
-			$styles   = [];
-			$preloads = [];
-			$entries  = [];
-
-			foreach($keys as $key)
-			{
-				$chunks = $this->resolver->resolve($key);
-
-				foreach($this->collectStyles($chunks) as $file)
-				{
-					$styles[$file] = $file;
-				}
-
-				$scripts = $this->collectScripts($chunks);
-
-				if($scripts)
-				{
-					$entries[] = array_pop($scripts);
-				}
-
-				foreach($scripts as $chunk)
-				{
-					$preloads[$chunk->file] = $chunk;
-				}
-			}
-
-			return [
-				'styles'  => array_values($styles),
-				'scripts' => [
-					'preloads' => array_values($preloads),
-					'entries'  => $entries,
-				],
-			];
-		}
-
 		private function collectStyles(array $chunks): array
 		{
 			$styles = [];
