@@ -22,7 +22,7 @@
 		{
 			$this->renderScriptTag("$this->server/@vite/client");
 
-			foreach($entrypoints as $i => $file)
+			foreach($entrypoints as $file)
 			{
 				if(pathinfo($file, PATHINFO_EXTENSION) === 'css')
 				{
@@ -30,7 +30,7 @@
 				}
 			}
 
-			foreach($entrypoints as $i => $file)
+			foreach($entrypoints as $file)
 			{
 				if(pathinfo($file, PATHINFO_EXTENSION) !== 'css')
 				{
@@ -39,12 +39,3 @@
 			}
 		}
 	}
-
-
-	/*
-		private function resolveServerUrl(string $hotfile): ?string
-		{
-			$server = file_get_contents($hotfile);
-
-			return rtrim($server, '/');
-		}*/

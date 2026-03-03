@@ -4,11 +4,11 @@
 
 	use RuntimeException;
 
-	readonly class Manifest
+	class Manifest
 	{
 		private Resolver $resolver;
 
-		public function __construct(private string $file)
+		public function __construct(private readonly string $file)
 		{
 			$manifest = $this->parse();
 
@@ -26,7 +26,7 @@
 
 			$manifest = json_decode($json, true);
 
-			if(!$manifest)
+			if($manifest === null)
 			{
 				throw new RuntimeException("Invalid JSON in manifest file: $this->file");
 			}
@@ -40,7 +40,7 @@
 
 			foreach($keys as $key)
 			{
-				$chunks = array_merge($chunks, $this->resolver->resolve($key));
+				$chunks += $this->resolver->resolve($key);
 			}
 
 			return [

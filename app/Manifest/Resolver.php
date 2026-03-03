@@ -2,12 +2,19 @@
 
 	namespace Webtimal\Vite\Manifest;
 
+	use RuntimeException;
+
 	readonly class Resolver
 	{
 		public function __construct(private array $manifest) {}
 
 		public function resolve(string $key, array &$resolved = []): array
 		{
+			if(!isset($this->manifest[$key]))
+			{
+				throw new RuntimeException("Invalid entrypoint: $key");
+			}
+
 			if(isset($resolved[$key]))
 			{
 				return [];
