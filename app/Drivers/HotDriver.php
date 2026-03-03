@@ -15,7 +15,9 @@
 		{
 			$server = file_get_contents($this->hotfile);
 
-			return trim($server);
+			$server = trim($server);
+
+			return rtrim($server, '/');
 		}
 
 		public function renderAssets(array $entrypoints): void
