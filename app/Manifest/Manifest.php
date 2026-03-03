@@ -2,6 +2,8 @@
 
 	namespace Webtimal\Vite\Manifest;
 
+	use RuntimeException;
+
 	readonly class Manifest
 	{
 		private Resolver $resolver;
@@ -15,9 +17,21 @@
 
 		private function parse(): array
 		{
+			if(!file_exists($this->file))
+			{
+				throw new RuntimeException("Manifest file not found: $this->file");
+			}
+
 			$json = file_get_contents($this->file);
 
-			return json_decode($json, true);
+			$manifest = json_decode($json, true);
+
+			if(!$manifest)
+			{
+				throw new RuntimeException("Invalid JSON in manifest file: $this->file");
+			}
+
+			return $manifest;
 		}
 
 		public function get(string ...$keys): array
