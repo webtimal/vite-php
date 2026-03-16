@@ -13,5 +13,7 @@
       "email": "dev@webtimal.ch"
     }
   ],
-  "require": {}
+  "require": {
+    "php": ">=8.1"
+  }
 }
