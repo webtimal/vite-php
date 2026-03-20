@@ -14,6 +14,11 @@ By parsing Vite’s `manifest.json`, it resolves asset URLs and generates the re
 
 HMR is supported through automatic `hot` file detection, enabling a seamless development workflow.
 
+## Installation
+```bash
+composer require webtimal/vite-php
+```
+
 ## Usage
 
 ### 1. Initialize a new Vite instance
