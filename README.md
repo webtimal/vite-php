@@ -17,7 +17,7 @@ HMR is supported through automatic `hot` file detection, enabling a seamless dev
 ## Usage
 
 ### 1. Initialize a new Vite instance
-```
+```php
 <?php
 
     use Webtimal\Vite\Vite;
@@ -37,7 +37,7 @@ HMR is supported through automatic `hot` file detection, enabling a seamless dev
 ```
 
 ### 2. Use it to render the HTML tags
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
     <head>
