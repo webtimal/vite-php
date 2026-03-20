@@ -1,12 +1,8 @@
 {
   "name": "webtimal/vite-php",
+  "description": "Integrates Vite assets into PHP apps, supporting development HMR and production builds.",
   "type": "library",
   "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "Webtimal\\Vite\\": "app/"
-    }
-  },
   "authors": [
     {
       "name": "Webtimal GmbH",
@@ -15,5 +11,10 @@
   ],
   "require": {
     "php": ">=8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Webtimal\\Vite\\": "app/"
+    }
   }
 }
