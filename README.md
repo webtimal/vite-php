@@ -1,5 +1,5 @@
 <p align="center">
-    ![Test](./vite-php.svg)
+    <img width="200" alt="Laravel Logo" src="https://raw.githubusercontent.com/webtimal/vite-php/main/vite-php.svg">
 </p>
 
 <p align="center">
