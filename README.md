@@ -36,7 +36,7 @@ composer require webtimal/vite-php
         base: '/dist',
         
         // Optional path to the hot file, containting the dev server URL
-        hotfile: __DIR__ .'./hot'
+        hotfile: __DIR__ .'/hot'
         
     );
 ```
